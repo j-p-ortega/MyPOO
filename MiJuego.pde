@@ -1,4 +1,4 @@
-boolean pause=true; //para poner y quitar pausa
+
 int tamanoCelular = 10;
 celula[][] malla;
 celula[][] mallaFalsa;
