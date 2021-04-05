@@ -14,4 +14,4 @@ Mi primer programa utilizando POO.
 ## TangramPShape.pde
 
 Implementación en Processing del [Tangram](https://es.wikipedia.org/wiki/Tangram) utilizando la clase PShape. Actualmente
-estoy intentado incorporar herramientas de IA para mejorar el programa.
+estoy intentado incorporar distintos niveles automáticos en el juego.
