@@ -20,12 +20,29 @@ Cambiar el estado de un grupo de celulas: Arrastrar el mouse sobre el grupo de c
 clickear cada célula individualmente). 
 Matar a todas las células vivas: Letra 'B'.
 Randomizar el arreglo actual: Letra 'R'.
-Cambiar el arreglo actual por un patrón predefinido: Teclas '1','2','3','4' y '5'.
+Cambiar el arreglo actual por un patrón predefinido: Teclas '1','2','3' y '4'.
 Cambiar la velocidad del juego: Teclas +/-.
 
 ## Arreglos predefinidos
 
+### Patrón 1: Vida estática.
 
+Al presionar la tecla '1', el arreglo de células se transforma en un patrón de vida estática predefinido; es decir, uno que se 
+mantiene invariante con el paso de los turnos.
 
+### Patrón 2: Pentadecathlon.
+
+Al presionar la tecla '2', el arreglo de células se transforma en un patrón pentadecathlon; es decir, un oscilador de periodo 15, 
+lo cual significa que cada quince turnos vuelve al arreglo original.
+
+### Patrón 3: Gliter.
+
+Al presionar la tecla '3', el arreglo de células se transforma en un arreglo tipo Nave Espacial conocido como Gliter, que se
+desplaza a lo largo de la pantalla y se aleja del punto de partida con cada turno.
+
+### Patrón 4: Gosper Glider Gun:
+
+Al presionar la tecla '4', el arreglo de células se transforma en un patrón conocido como Gosper Glider Gun, que es esencialmente
+una máquina que genera Gliders cada cierta cantidad de turnos.
 
 

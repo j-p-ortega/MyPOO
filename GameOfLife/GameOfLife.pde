@@ -2,6 +2,7 @@
 
 int tamanoCelular = 10; // Parametro para definir el tamaño de cada celula.
 boolean pause = false; //Para la pausa.
+int vel=3; //Para la velocidad.
 celula[][] malla;      //Los objetos que usaremos, pertenecientes
 celula[][] mallaFalsa; //clase creada por mi llamada 'celula'.
 
@@ -9,7 +10,6 @@ void setup() {
  
   //Setup basico:
   size(800, 600);
-  frameRate(2);
   background(0);
   
   //Creacion de las celulas que usaremos:
@@ -36,8 +36,8 @@ for(int i=1; i<width/tamanoCelular-1; i++){
  
 }
 void draw() {
- 
 
+  frameRate(vel);
   
  //Para dibujar las celulas reales y actualizar el valor de las falsas:
  for (int i=0;i<width/tamanoCelular;i++) {
