@@ -1,8 +1,9 @@
 
 
-//Funcion booleana para determinar el arreglo inicial:
+//Funcion booleana para determinar el arreglo inicial, inspirado en  
+//https://forum.processing.org/two/discussion/1433/random-boolean-howto :
 boolean randomBool() {
-  return random(1) > .90;
+  return random(1) > .9;
 }
 
 
