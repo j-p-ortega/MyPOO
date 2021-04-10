@@ -8,8 +8,7 @@ códigos de vez en cuando :) A continuación se encuentra una breve descripción
 
 ### Propósito
 
-Implementar en Processing el [Juego de la Vida de Conway](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) que involucra la creación de una clase.
-Mi primer programa utilizando POO.
+Implementar en Processing el [Juego de la Vida de Conway](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life). Mi primer programa utilizando POO.
 
 ### Tareas
 
