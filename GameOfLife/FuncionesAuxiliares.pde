@@ -73,10 +73,20 @@ void keyPressed(){
       mallaFalsa[i][j]= new celula(tamanoCelular*i,tamanoCelular*j,tamanoCelular,tamanoCelular,false);
     }
    } 
-    
-    
+   
     
   }
+  
+       if(key=='r'||key=='R'){
+  
+    for(int i=0; i<width/tamanoCelular; i++){
+     for(int j=0; j<height/tamanoCelular;j++){
+        malla[i][j]= new celula(tamanoCelular*i,tamanoCelular*j,tamanoCelular,tamanoCelular,randomBool());
+          }
+       }
+    
+     } 
+    
   
   //Cambia la velocidad:
   if(key=='+'){

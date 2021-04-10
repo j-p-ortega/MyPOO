@@ -5,7 +5,7 @@
 Esta es una implementación del [Juego de la Vida de Conway](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) que involucra la creación
 de una clase: la clase 'celula'.
 
-En el archivo 'ClaseCelula.pde' se encuentra su descripción e implementación de la clase creada. En
+En el archivo 'ClaseCelula.pde' se encuentra la descripción e implementación de la clase creada. En
 'FuncionesAuxiliares.pde' están las funciones usadas para el correcto funcionamiento del juego (por ejemplo,
 las funciones que son llamadas cuando el usuario interactúa). Y en 'GameOfLife.pde' está la columna
 vertebral del programa.
