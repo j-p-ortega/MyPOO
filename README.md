@@ -1,4 +1,4 @@
-# ¿Qué es "Ensayo"?
+# ¿Qué es "MyPOO"?
 
 En este repositorio se encuentran mis trabajos de la materia Programación Orientada a Objetos de
 la Universidad Nacional de Colombia, cursada durante el primer semestre de 2021. Actualizo los
