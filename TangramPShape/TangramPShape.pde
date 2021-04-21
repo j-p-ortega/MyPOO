@@ -54,7 +54,7 @@ home = loadShape("Home.svg");
 
 lv1 = loadShape("lv1.svg");
 lv1.disableStyle();        
-lv1.scale(0.6);
+lv1.scale(0.593);
 
 
 }
@@ -74,34 +74,34 @@ switch(screenState) {
   drawMenu();
   break;
   
-  case 1:
+  case -1:
   drawLibre();
   break;
   
-  case 2:
+  case -2:
   drawMisc();
   break;
  
-  case 3:
+  case 1:
   drawNivel1();
   break;
   
-  case 4:
+  case 2:
   drawNivel2();
   break;
   
     
-  case 5:
+  case 3:
   drawNivel3();
   break;
   
     
-  case 6:
+  case 4:
   drawNivel4();
   break;
   
     
-  case 7:
+  case 5:
   drawNivel5();
   break;
  
