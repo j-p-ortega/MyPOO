@@ -1,3 +1,17 @@
+//Los objetos que usaremos:
+Pieza cuadrado;
+Pieza granTriang1;
+Pieza granTriang2;
+Pieza medioTriang;
+Pieza miniTriang1;
+Pieza miniTriang2;
+Pieza cuadrilat;
+PShape home;
+PShape lv1;
+
+
+
+
 
 
 //Definicion de parametros:
@@ -21,33 +35,17 @@ stroke(4);
 
 //Inicializadores de las piezas:
 
-//Empecemos con el cuadrado:
-fill(azul);
-cuadrado = createShape(RECT,0,0,sqrt(2)*d,sqrt(2)*d);
-cuadrado.rotate(PI/4);
-//Primer triangulo grande:
-fill(rojo);
-granTriang1 = createShape(TRIANGLE,0,0,-2*d,-2*d,-2*d,2*d);
+cuadrilat   = new Pieza(1,0,0,naranja,false);
+cuadrado    = new Pieza(2,2*d,2*d,azul,false);
+granTriang1 = new Pieza(30,2*d,2*d,rojo,false);
+granTriang1.rotar(-PI/4);
+granTriang2 = new Pieza(30,2*d,2*d,amarillo,false);
+miniTriang1 = new Pieza(32,3*d,3*d,verde,false);
+miniTriang1.rotar(PI/2);
+miniTriang2 = new Pieza(32,2*d,2*d,morado,false);
+medioTriang = new Pieza(31,4*d,0,blanco,false);
 
-//Segundo triangulo grande:
-fill(amarillo);
-granTriang2 = createShape(TRIANGLE,0,0,-2*d,2*d,2*d,2*d);
 
-//Primer triangulo pequeño:
-fill(verde);
-miniTriang1 = createShape(TRIANGLE,0,0,d,d,d,-d);
-
-//Segundo triangulo pequeño:
-fill(morado);
-miniTriang2 = createShape(TRIANGLE,0,0,-d,-d,d,-d);
-
-//Triangulo mediano:
-fill(blanco);
-medioTriang = createShape(TRIANGLE,0,0,-2*d,0,0,2*d);
-
-//Y ahora el cuadrilatero:
-fill(naranja);
-cuadrilat = createShape(QUAD,0,0,d,d,3*d,d,2*d,0);
 
 
 home = loadShape("Home.svg");

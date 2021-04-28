@@ -3,60 +3,55 @@ loadPixels();
 
 //Para rotar una pieza a la izquiera:
    if((get(mouseX,mouseY)==azul)&&(key=='r' || key == 'R')){  
-      cuadrado.rotate(-PI/4);
+      cuadrado.rotar(-PI/4);
       }
   if((get(mouseX,mouseY)==rojo)&&(key=='r' || key == 'R')){  
-      granTriang1.rotate(-PI/4);
+      granTriang1.rotar(-PI/4);
       }
   if((get(mouseX,mouseY)==amarillo)&&(key=='r' || key == 'R')){  
-      granTriang2.rotate(-PI/4);
+      granTriang2.rotar(-PI/4);
       }  
   if((get(mouseX,mouseY)==verde)&&(key=='r' || key == 'R')){  
-      miniTriang1.rotate(-PI/4);
+      miniTriang1.rotar(-PI/4);
       }  
   if((get(mouseX,mouseY)==morado)&&(key=='r' || key == 'R')){  
-      miniTriang2.rotate(-PI/4);
+      miniTriang2.rotar(-PI/4);
       }  
   if((get(mouseX,mouseY)==blanco)&&(key=='r' || key == 'R')){  
-      medioTriang.rotate(-PI/4);
+      medioTriang.rotar(-PI/4);
       } 
  if((get(mouseX,mouseY)==naranja)&&(key=='r' || key == 'R')){  
-      cuadrilat.rotate(-PI/4);
+      cuadrilat.rotar(-PI/4);
       }
       
       
 //Para rotar cualquier pieza a la derecha:      
  if((get(mouseX,mouseY)==azul)&&(key=='e' || key == 'E')){  
-      cuadrado.rotate(PI/4);
+      cuadrado.rotar(PI/4);
       }
   if((get(mouseX,mouseY)==rojo)&&(key=='e' || key == 'E')){  
-      granTriang1.rotate(PI/4);
+      granTriang1.rotar(PI/4);
       }
   if((get(mouseX,mouseY)==amarillo)&&(key=='e' || key == 'E')){  
-      granTriang2.rotate(PI/4);
+      granTriang2.rotar(PI/4);
       }  
   if((get(mouseX,mouseY)==verde)&&(key=='e' || key == 'E')){  
-      miniTriang1.rotate(PI/4);
+      miniTriang1.rotar(PI/4);
       }  
   if((get(mouseX,mouseY)==morado)&&(key=='e' || key == 'E')){  
-      miniTriang2.rotate(PI/4);
+      miniTriang2.rotar(PI/4);
       }  
   if((get(mouseX,mouseY)==blanco)&&(key=='e' || key == 'E')){  
-      medioTriang.rotate(PI/4);
+      medioTriang.rotar(PI/4);
       } 
  if((get(mouseX,mouseY)==naranja)&&(key=='e' || key == 'E')){  
-      cuadrilat.rotate(PI/4);
+      cuadrilat.rotar(PI/4);
       }
 //Para girar el paralelogramo:
  if((get(mouseX,mouseY)==naranja)&&(key=='t' || key == 'T')){
-     fill(naranja);
-     if(i%2==0){
-     cuadrilat = createShape(QUAD,d,0,3*d,0,2*d,d,0,d);
-     }
-     if(i%2==1){
-     cuadrilat = createShape(QUAD,0,0,d,d,3*d,d,2*d,0);
-     }
-     i++;
+
+   cuadrilat.reflect();
+   
  }
 
 
@@ -66,39 +61,39 @@ void mousePressed(){
   
 
   
- if(get(mouseX,mouseY)==azul&&cuadradob==false){
-     cuadradob=true;}
- else if(get(mouseX,mouseY)==rojo&&granTriang1b==false){
-     granTriang1b=true;}
- else if(get(mouseX,mouseY)==amarillo&&granTriang2b==false){
-     granTriang2b=true;}
- else if(get(mouseX,mouseY)==verde&&miniTriang1b==false){
-     miniTriang1b=true;}  
- else if(get(mouseX,mouseY)==morado&&miniTriang2b==false){
-     miniTriang2b=true;}  
- else if(get(mouseX,mouseY)==blanco&&medioTriangb==false){
-     medioTriangb=true;}
- else if(get(mouseX,mouseY)==naranja&&cuadrilatb==false){
-     cuadrilatb=true;}        
+ if(get(mouseX,mouseY)==azul&&cuadrado.mov==false){
+     cuadrado.setMovimiento(true);}
+ else if(get(mouseX,mouseY)==rojo&&granTriang1.mov==false){
+      granTriang1.setMovimiento(true);}
+ else if(get(mouseX,mouseY)==amarillo&&granTriang2.mov==false){
+      granTriang2.setMovimiento(true);}
+ else if(get(mouseX,mouseY)==verde&&miniTriang1.mov==false){
+      miniTriang1.setMovimiento(true);}  
+ else if(get(mouseX,mouseY)==morado&&miniTriang2.mov==false){
+       miniTriang2.setMovimiento(true);}  
+ else if(get(mouseX,mouseY)==blanco&&medioTriang.mov==false){
+      medioTriang.setMovimiento(true);}
+ else if(get(mouseX,mouseY)==naranja&&cuadrilat.mov==false){
+     cuadrilat.setMovimiento(true);}        
 
   
 }
 
 void mouseReleased(){
      
-    cuadradob=false;
+    cuadrado.setMovimiento(false);
    
-    granTriang1b=false;
+    granTriang1.setMovimiento(false);
 
-    granTriang2b=false;
+    granTriang2.setMovimiento(false);
 
-    miniTriang1b=false;
+    miniTriang1.setMovimiento(false);
 
-    miniTriang2b=false;
+    miniTriang2.setMovimiento(false);
 
-    medioTriangb=false;
+    medioTriang.setMovimiento(false);
 
-    cuadrilatb=false;
+    cuadrilat.setMovimiento(false);
      
   
 }
@@ -168,54 +163,17 @@ screenState=5;
 
 if(screenState!=screenStateF){
   
-cuadradoX=3*d;cuadradoX0=3*d;
-cuadradoY=d;cuadradoY0=d;
-granTriang1X=2*d;granTriang1X0=2*d;
-granTriang1Y=2*d;granTriang1Y0=2*d;
-granTriang2X=2*d;granTriang2X0=2*d;
-granTriang2Y=2*d;granTriang2Y0=2*d;
-miniTriang1X=3*d;miniTriang1X0=3*d;
-miniTriang1Y=3*d;miniTriang1Y0=3*d;
-miniTriang2X=2*d;miniTriang2X0=2*d;
-miniTriang2Y=2*d;miniTriang2Y0=2*d;
-medioTriangX=4*d;medioTriangX0=4*d;
-medioTriangY=0;medioTriangY0=0;
-cuadrilatX=0;cuadrilatX0=0;
-cuadrilatY=0;cuadrilatY0=0;  
-i=0;
-
-fill(azul);
-cuadrado = createShape(RECT,0,0,sqrt(2)*d,sqrt(2)*d);
-cuadrado.rotate(PI/4);
-//Primer triangulo grande:
-fill(rojo);
-granTriang1 = createShape(TRIANGLE,0,0,-2*d,-2*d,-2*d,2*d);
-
-//Segundo triangulo grande:
-fill(amarillo);
-granTriang2 = createShape(TRIANGLE,0,0,-2*d,2*d,2*d,2*d);
-
-//Primer triangulo pequeño:
-fill(verde);
-miniTriang1 = createShape(TRIANGLE,0,0,d,d,d,-d);
-
-//Segundo triangulo pequeño:
-fill(morado);
-miniTriang2 = createShape(TRIANGLE,0,0,-d,-d,d,-d);
-
-//Triangulo mediano:
-fill(blanco);
-medioTriang = createShape(TRIANGLE,0,0,-2*d,0,0,2*d);
-
-//Y ahora el cuadrilatero:
-fill(naranja);
-cuadrilat = createShape(QUAD,0,0,d,d,3*d,d,2*d,0);
-
-  
-}
-  
-  
+cuadrilat   = new Pieza(1,0,0,naranja,false);
+cuadrado    = new Pieza(2,3*d,d,azul,false);
+granTriang1 = new Pieza(30,2*d,2*d,rojo,false);
+granTriang1.rotar(-PI/2);
+granTriang2 = new Pieza(30,2*d,2*d,amarillo,false);
+miniTriang1 = new Pieza(32,3*d,3*d,verde,false);
+miniTriang1.rotar(PI/2);
+miniTriang2 = new Pieza(32,2*d,2*d,morado,false);
+medioTriang = new Pieza(31,4*d,0,blanco,false);
   
 }
  
  
+}
