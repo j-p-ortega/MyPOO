@@ -102,7 +102,7 @@ void mouseClicked(){
   
   int screenStateF = screenState;
   
-if(get(mouseX,mouseY)==color(170)||get(mouseX,mouseY)==color(0)){
+if(get(mouseX,mouseY)==color(170)||get(mouseX,mouseY)==color(1,0,1)){
   
 screenState=0;  
 

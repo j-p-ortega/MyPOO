@@ -1,9 +1,9 @@
 
 class Pieza {
-//Los atributos de un objeto de la clase PShape tiene por atributos
+//Los atributos de un objeto de la clase Pieza son los siguientes:
 //un valor entero que me indica el tipo de pieza que es 
 //(cuadrado, triagulo grande, triangulo pequeño, etc), un par de coordenadas (x,y),
-// un color, una valor booleano que me indica si se esta moviendo o no
+// un color y un valor booleano que me indica si se esta moviendo o no
 
   int tipo; //el tipo de la pieza. 1 para paraleogramo, 2 para cuadrado, 30 para
   //triangulo grande, 31 para triangulo mediado y 32 para triangulo pequeño

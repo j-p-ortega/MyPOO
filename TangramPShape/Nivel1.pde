@@ -1,7 +1,7 @@
 void drawNivel1() {
   
-stroke(1,0,1);  
-fill(1,0,1);   
+stroke(0,0,0);  
+fill(0,0,0);   
 
 shape(lv1,120,40);
   
@@ -33,7 +33,7 @@ text("Nivel 1", 15, 565);
 fill(170);
 rect(520,520,50,50,7);
 
-fill(200);
+fill(1,0,1);
 shape(home, 525, 525, 40,40);
 
 int ruido=0;
@@ -41,7 +41,7 @@ int ruido=0;
 for(int k=0;k<600;k++){
   for(int j=0;j<600;j++){
     
-    if(get(k,j)==color(1,0,1)){
+    if(get(k,j)==color(0,0,0)){
       
       ruido=ruido+1;
       
@@ -51,11 +51,11 @@ for(int k=0;k<600;k++){
    
 }
 
-if(ruido<20&&key==' '){
+if(ruido<20&&keyPressed&&key==' '){
   screenState=2;
   println("¡Nivel 1 superado!");
 }
-else if(ruido>=20&&key==' '){
+else if(ruido>=20&&keyPressed&&key==' '){
   println("Intentalo de nuevo");
 }
 
