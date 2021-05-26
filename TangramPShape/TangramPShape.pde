@@ -58,9 +58,17 @@ lv1 = loadShape("lv1.svg");
 lv1.disableStyle();        
 lv1.scale(0.593); 
 lvi2 = loadImage("lvi2.png");
+lvi2.resize(527,0);
+lvi2.filter(THRESHOLD,2);
 lvi3 = loadImage("lvi3.png");
+lvi3.resize(750,285);
+lvi3.filter(THRESHOLD,2);
 lvi4 = loadImage("lvi4.png");
+lvi4.resize(352,0);
+lvi4.filter(THRESHOLD,2);
 lvi5 = loadImage("lvi5.png");
+lvi5.resize(374,0);
+lvi5.filter(THRESHOLD,2);
 
 
 }
