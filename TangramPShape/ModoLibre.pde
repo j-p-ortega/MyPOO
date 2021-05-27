@@ -10,15 +10,8 @@ cuadrilat.display();
 cuadrado.display();  
 
 
+movement(mouseQ);
 
-granTriang1.mover(mouseX,mouseY);
-granTriang2.mover(mouseX,mouseY);
-miniTriang1.mover(mouseX,mouseY);  
-miniTriang2.mover(mouseX,mouseY);  
-medioTriang.mover(mouseX,mouseY);
-cuadrilat.mover(mouseX,mouseY);
-cuadrado.mover(mouseX,mouseY); 
- 
 fill(170);
 rect(520,520,50,50,7);
 
