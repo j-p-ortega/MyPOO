@@ -45,16 +45,16 @@ void setup() {
 
   //Inicializadores de las piezas:
 
-  cuadrilat   = new Pieza(1, 0, 0, naranja, false);
-  cuadrado    = new Pieza(2, 3*d, d, azul, false);
-  granTriang1 = new Pieza(30, 2*d, 2*d, rojo, false);
+  cuadrilat   = new Pieza(1, 0, 0, naranja, false,0);
+  cuadrado    = new Pieza(2, 3*d, d, azul, false,0);
+  granTriang1 = new Pieza(30, 2*d, 2*d, rojo, false,0);
   granTriang1.rotar(-PI/2);
-  granTriang2 = new Pieza(30, 2*d, 2*d, amarillo, false);
-  miniTriang1 = new Pieza(32, 3*d, 3*d, verde, false);
+  granTriang2 = new Pieza(30, 2*d, 2*d, amarillo, false,0);
+  miniTriang1 = new Pieza(32, 3*d, 3*d, verde, false,0);
   miniTriang1.rotar(PI/2);
-  miniTriang2 = new Pieza(32, 2*d, 2*d, morado, false);
-  medioTriang = new Pieza(31, 4*d, 0, blanco, false);
-  ninguna     = new Pieza(1, 0, 0, naranja, false);
+  miniTriang2 = new Pieza(32, 2*d, 2*d, morado, false,0);
+  medioTriang = new Pieza(31, 4*d, 0, blanco, false,0);
+  ninguna     = new Pieza(1, 0, 0, naranja, false,0);
 
 
 

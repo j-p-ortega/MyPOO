@@ -4,24 +4,31 @@ void keyPressed() {
   //Para rotar una pieza a la izquiera:
   if (mouseQ==true) {
     if ((get(mouseX, mouseY)==azul)&&(key=='r' || key == 'R')) {
+      
       cuadrado.rotar(-PI/4);
     }
     if ((get(mouseX, mouseY)==rojo)&&(key=='r' || key == 'R')) {
+
       granTriang1.rotar(-PI/4);
     }
     if ((get(mouseX, mouseY)==amarillo)&&(key=='r' || key == 'R')) {
+
       granTriang2.rotar(-PI/4);
     }
     if ((get(mouseX, mouseY)==verde)&&(key=='r' || key == 'R')) {
+
       miniTriang1.rotar(-PI/4);
     }
     if ((get(mouseX, mouseY)==morado)&&(key=='r' || key == 'R')) {
+
       miniTriang2.rotar(-PI/4);
     }
     if ((get(mouseX, mouseY)==blanco)&&(key=='r' || key == 'R')) {
+
       medioTriang.rotar(-PI/4);
     }
     if ((get(mouseX, mouseY)==naranja)&&(key=='r' || key == 'R')) {
+
       cuadrilat.rotar(-PI/4);
     }
   }
@@ -102,7 +109,7 @@ void keyPressed() {
 
 
   //Para girar el paralelogramo:
-  if ((get(mouseX, mouseY)==naranja)&&(key=='t' || key == 'T')) {
+  if ((key=='t' || key == 'T')) {
 
     cuadrilat.reflect();
   }
@@ -357,45 +364,45 @@ void keyReleased() {
     }
   }
 
-//Para cambiar de pantallas:
+  //Para cambiar de pantallas:
 
-if(key=='h'||key=='H'){
-  screenState=0; 
-}
+  if (key=='h'||key=='H') {
+    screenState=0;
+  }
 
-if(key=='1'&&screenState== 0){
-  screenState= -1; 
-}
+  if (key=='1'&&screenState== 0) {
+    screenState= -1;
+  }
 
-if(key=='2'&&screenState== 0){
-  screenState=1; 
-}
+  if (key=='2'&&screenState== 0) {
+    screenState=1;
+  }
 
 
 
-if(key=='1'&&screenState== -2){
-  screenState=1; 
-}
+  if (key=='1'&&screenState== -2) {
+    screenState=1;
+  }
 
-if(key=='2'&&screenState== -2){
-  screenState=2; 
-}
+  if (key=='2'&&screenState== -2) {
+    screenState=2;
+  }
 
-if(key=='3'&&screenState== -2){
-  screenState=3; 
-}
+  if (key=='3'&&screenState== -2) {
+    screenState=3;
+  }
 
-if(key=='4'&&screenState==-2){
-  screenState=4; 
-}
+  if (key=='4'&&screenState==-2) {
+    screenState=4;
+  }
 
-if(key=='5'&&screenState==-2){
-  screenState=5; 
-}
+  if (key=='5'&&screenState==-2) {
+    screenState=5;
+  }
 
-if(key=='3'&&screenState== 0){
-  screenState= -2; 
-}
+  if (key=='3'&&screenState== 0) {
+    screenState= -2;
+  }
 }
 
 
@@ -490,15 +497,15 @@ void mouseClicked() {
 
   if (screenState!=screenStateF) {
 
-    cuadrilat   = new Pieza(1, 0, 0, naranja, false);
-    cuadrado    = new Pieza(2, 3*d, d, azul, false);
-    granTriang1 = new Pieza(30, 2*d, 2*d, rojo, false);
+    cuadrilat   = new Pieza(1, 0, 0, naranja, false, 0);
+    cuadrado    = new Pieza(2, 3*d, d, azul, false, 0);
+    granTriang1 = new Pieza(30, 2*d, 2*d, rojo, false, 0);
     granTriang1.rotar(-PI/2);
-    granTriang2 = new Pieza(30, 2*d, 2*d, amarillo, false);
-    miniTriang1 = new Pieza(32, 3*d, 3*d, verde, false);
+    granTriang2 = new Pieza(30, 2*d, 2*d, amarillo, false, 0);
+    miniTriang1 = new Pieza(32, 3*d, 3*d, verde, false, 0);
     miniTriang1.rotar(PI/2);
-    miniTriang2 = new Pieza(32, 2*d, 2*d, morado, false);
-    medioTriang = new Pieza(31, 4*d, 0, blanco, false);
+    miniTriang2 = new Pieza(32, 2*d, 2*d, morado, false, 0);
+    medioTriang = new Pieza(31, 4*d, 0, blanco, false, 0);
   }
 }
 

@@ -3,7 +3,8 @@ class Pieza {
 //Los atributos de un objeto de la clase Pieza son los siguientes:
 //un valor entero que me indica el tipo de pieza que es 
 //(cuadrado, triagulo grande, triangulo pequeño, etc), un par de coordenadas (x,y),
-// un color y un valor booleano que me indica si se esta moviendo o no
+// un color y un valor booleano que me indica si se esta moviendo o no, y un angulo
+//que indica su rotacion.
 
   int tipo; //el tipo de la pieza. 1 para paraleogramo, 2 para cuadrado, 30 para
   //triangulo grande, 31 para triangulo mediado y 32 para triangulo pequeño
@@ -15,13 +16,15 @@ class Pieza {
   float y0=0;
   float xM=0;
   float yM=0; 
+  float ang=0;
   
-  Pieza(int tipoF, float xF, float yF, color rellenoF, boolean movF){
+  Pieza(int tipoF, float xF, float yF, color rellenoF, boolean movF, float angF){
    tipo = tipoF;
    x = xF;
    y = yF;
    relleno = rellenoF;
    mov = movF; 
+   ang = angF;
    
    stroke(4);
    fill(relleno);
@@ -50,15 +53,19 @@ class Pieza {
 //Ahora veamos los métodos:
 
 void display() {
-  
-shape(forma,x,y);
-  
+push();
+translate(x,y);
+rotate(ang);
+shape(forma,0,0);
+pop();
+
 }
 
 
-void rotar(float ang){
+
+void rotar(float angFal){
   
-  forma.rotate(ang);
+  ang=ang+angFal;
   
 }
 
