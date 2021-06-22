@@ -176,11 +176,11 @@ void keyPressed() {
     if (PiezaSelect==granTriang2) {
       granTriang2.setMovimiento(true);
     }
-    if (PiezaSelect==miniTriang1) {
-      granTriang1.setMovimiento(true);
+       if (PiezaSelect==miniTriang1) {
+      miniTriang1.setMovimiento(true);
     }
     if (PiezaSelect==miniTriang2) {
-      granTriang2.setMovimiento(true);
+      miniTriang2.setMovimiento(true);
     }
     if (PiezaSelect==medioTriang) {
       medioTriang.setMovimiento(true);
@@ -202,10 +202,10 @@ void keyPressed() {
       granTriang2.setMovimiento(true);
     }
     if (PiezaSelect==miniTriang1) {
-      granTriang1.setMovimiento(true);
+      miniTriang1.setMovimiento(true);
     }
     if (PiezaSelect==miniTriang2) {
-      granTriang2.setMovimiento(true);
+      miniTriang2.setMovimiento(true);
     }
     if (PiezaSelect==medioTriang) {
       medioTriang.setMovimiento(true);
@@ -226,10 +226,10 @@ void keyPressed() {
       granTriang2.setMovimiento(true);
     }
     if (PiezaSelect==miniTriang1) {
-      granTriang1.setMovimiento(true);
+      miniTriang1.setMovimiento(false);
     }
     if (PiezaSelect==miniTriang2) {
-      granTriang2.setMovimiento(true);
+      miniTriang2.setMovimiento(false);
     }
     if (PiezaSelect==medioTriang) {
       medioTriang.setMovimiento(true);
@@ -250,10 +250,10 @@ void keyPressed() {
       granTriang2.setMovimiento(true);
     }
     if (PiezaSelect==miniTriang1) {
-      granTriang1.setMovimiento(true);
+      miniTriang1.setMovimiento(false);
     }
     if (PiezaSelect==miniTriang2) {
-      granTriang2.setMovimiento(true);
+      miniTriang2.setMovimiento(false);
     }
     if (PiezaSelect==medioTriang) {
       medioTriang.setMovimiento(true);
@@ -281,10 +281,10 @@ void keyReleased() {
       granTriang2.setMovimiento(false);
     }
     if (PiezaSelect==miniTriang1) {
-      granTriang1.setMovimiento(false);
+      miniTriang1.setMovimiento(false);
     }
     if (PiezaSelect==miniTriang2) {
-      granTriang2.setMovimiento(false);
+      miniTriang2.setMovimiento(false);
     }
     if (PiezaSelect==medioTriang) {
       medioTriang.setMovimiento(false);
@@ -306,10 +306,10 @@ void keyReleased() {
       granTriang2.setMovimiento(false);
     }
     if (PiezaSelect==miniTriang1) {
-      granTriang1.setMovimiento(false);
+      miniTriang1.setMovimiento(false);
     }
     if (PiezaSelect==miniTriang2) {
-      granTriang2.setMovimiento(false);
+      miniTriang2.setMovimiento(false);
     }
     if (PiezaSelect==medioTriang) {
       medioTriang.setMovimiento(false);
@@ -330,10 +330,10 @@ void keyReleased() {
       granTriang2.setMovimiento(false);
     }
     if (PiezaSelect==miniTriang1) {
-      granTriang1.setMovimiento(false);
+      miniTriang1.setMovimiento(false);
     }
     if (PiezaSelect==miniTriang2) {
-      granTriang2.setMovimiento(false);
+      miniTriang2.setMovimiento(false);
     }
     if (PiezaSelect==medioTriang) {
       medioTriang.setMovimiento(false);
@@ -354,10 +354,10 @@ void keyReleased() {
       granTriang2.setMovimiento(false);
     }
     if (PiezaSelect==miniTriang1) {
-      granTriang1.setMovimiento(false);
+      miniTriang1.setMovimiento(false);
     }
     if (PiezaSelect==miniTriang2) {
-      granTriang2.setMovimiento(false);
+      miniTriang2.setMovimiento(false);
     }
     if (PiezaSelect==medioTriang) {
       medioTriang.setMovimiento(false);
@@ -497,15 +497,16 @@ void mouseClicked() {
 
   if (screenState!=screenStateF) {
 
-    cuadrilat   = new Pieza(1, 0, 0, naranja, false, 0);
-    cuadrado    = new Pieza(2, 3*d, d, azul, false, 0);
-    granTriang1 = new Pieza(30, 2*d, 2*d, rojo, false, 0);
-    granTriang1.rotar(-PI/2);
-    granTriang2 = new Pieza(30, 2*d, 2*d, amarillo, false, 0);
-    miniTriang1 = new Pieza(32, 3*d, 3*d, verde, false, 0);
-    miniTriang1.rotar(PI/2);
-    miniTriang2 = new Pieza(32, 2*d, 2*d, morado, false, 0);
-    medioTriang = new Pieza(31, 4*d, 0, blanco, false, 0);
+  cuadrilat   = new Quad(1, 0, 0, naranja, false,0);
+  cuadrado    = new Quad(2, 3*d, d, azul, false,0);
+  granTriang1 = new Triang(1, 2*d, 2*d, rojo, false,0);
+  granTriang1.rotar(-PI/2);
+  granTriang2 = new Triang(1, 2*d, 2*d, amarillo, false,0);
+  miniTriang1 = new Triang(3, 3*d, 3*d, verde, false,0);
+  miniTriang1.rotar(PI/2);
+  miniTriang2 = new Triang(3, 2*d, 2*d, morado, false,0);
+  medioTriang = new Triang(2, 4*d, 0, blanco, false,0);
+  ninguna     = new Triang(2, 0, 0, naranja, false,0);
   }
 }
 

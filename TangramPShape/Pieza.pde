@@ -6,20 +6,17 @@ class Pieza {
 // un color y un valor booleano que me indica si se esta moviendo o no, y un angulo
 //que indica su rotacion.
 
-  int tipo; //el tipo de la pieza. 1 para paraleogramo, 2 para cuadrado, 30 para
-  //triangulo grande, 31 para triangulo mediado y 32 para triangulo pequeño
   float x,y; //las coordenadas
   color relleno; //el color
   boolean mov; //Moviendose o no
-  PShape forma; //Para dbujar la forma   
+
   float x0=0;
   float y0=0;
   float xM=0;
   float yM=0; 
   float ang=0;
   
-  Pieza(int tipoF, float xF, float yF, color rellenoF, boolean movF, float angF){
-   tipo = tipoF;
+  Pieza( float xF, float yF, color rellenoF, boolean movF, float angF){
    x = xF;
    y = yF;
    relleno = rellenoF;
@@ -28,23 +25,7 @@ class Pieza {
    
    stroke(4);
    fill(relleno);
-   
-   if(tipo==1){
-    forma = createShape(QUAD,0,0,d,d,3*d,d,2*d,0);     
-   }
-   else if(tipo==2){
-   forma = createShape(RECT,0,0,sqrt(2)*d,sqrt(2)*d);
-   forma.rotate(PI/4);
-  }
-  else if(tipo==30){
-   forma = createShape(TRIANGLE,0,0,-2*d,-2*d,-2*d,2*d);
-  }
-  else if(tipo==31){
-   forma = createShape(TRIANGLE,0,0,-2*d,0,0,2*d);  
-  }
-  else if(tipo==32){
-   forma = createShape(TRIANGLE,0,0,-d,-d,d,-d);;  
-  }
+  
 
   
   }
@@ -52,14 +33,6 @@ class Pieza {
 
 //Ahora veamos los métodos:
 
-void display() {
-push();
-translate(x,y);
-rotate(ang);
-shape(forma,0,0);
-pop();
-
-}
 
 
 
@@ -95,11 +68,6 @@ void setMovimiento(boolean bol){
   
 }
 
-void reflect(){
-  
- forma.scale(-1,1); 
-  
-}
 
 
   }

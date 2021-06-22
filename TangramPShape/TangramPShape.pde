@@ -1,11 +1,11 @@
 //Los objetos que usaremos:
-Pieza cuadrado;
-Pieza granTriang1;
-Pieza granTriang2;
-Pieza medioTriang;
-Pieza miniTriang1;
-Pieza miniTriang2;
-Pieza cuadrilat;
+Quad cuadrado;
+Triang granTriang1;
+Triang granTriang2;
+Triang medioTriang;
+Triang miniTriang1;
+Triang miniTriang2;
+Quad cuadrilat;
 Pieza ninguna; //Place holder vacio
 PShape home;
 PShape lv1;
@@ -45,16 +45,16 @@ void setup() {
 
   //Inicializadores de las piezas:
 
-  cuadrilat   = new Pieza(1, 0, 0, naranja, false,0);
-  cuadrado    = new Pieza(2, 3*d, d, azul, false,0);
-  granTriang1 = new Pieza(30, 2*d, 2*d, rojo, false,0);
+ cuadrilat   = new Quad(1, 0, 0, naranja, false,0);
+  cuadrado    = new Quad(2, 3*d, d, azul, false,0);
+  granTriang1 = new Triang(1, 2*d, 2*d, rojo, false,0);
   granTriang1.rotar(-PI/2);
-  granTriang2 = new Pieza(30, 2*d, 2*d, amarillo, false,0);
-  miniTriang1 = new Pieza(32, 3*d, 3*d, verde, false,0);
+  granTriang2 = new Triang(1, 2*d, 2*d, amarillo, false,0);
+  miniTriang1 = new Triang(3, 3*d, 3*d, verde, false,0);
   miniTriang1.rotar(PI/2);
-  miniTriang2 = new Pieza(32, 2*d, 2*d, morado, false,0);
-  medioTriang = new Pieza(31, 4*d, 0, blanco, false,0);
-  ninguna     = new Pieza(1, 0, 0, naranja, false,0);
+  miniTriang2 = new Triang(3, 2*d, 2*d, morado, false,0);
+  medioTriang = new Triang(2, 4*d, 0, blanco, false,0);
+  ninguna     = new Triang(2, 0, 0, naranja, false,0);
 
 
 
