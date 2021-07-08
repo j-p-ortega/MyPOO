@@ -1,33 +1,24 @@
 
 class Triang extends Pieza {
 
-    PShape forma;
-  
-  Triang (int tamano, float xF, float yF, color rellenoF, boolean movF, float angF) {
-    
+  float coord1, coord2, coord3, coord4;
+
+  Triang (float xF, float yF, color rellenoF, boolean movF, float angF, float coord1F, float coord2F, float coord3F, float coord4F) {
+
     super(xF, yF, rellenoF, movF, angF);
+    
+    coord1=coord1F;
+    coord2=coord2F;
+    coord3=coord3F;
+    coord4=coord4F;
 
+  }
 
-   //Para dbujar la forma
-
-    if (tamano==1) {
-      forma = createShape(TRIANGLE, 0, 0, -2*d, -2*d, -2*d, 2*d);
-    } else if (tamano==2) {
-      forma = createShape(TRIANGLE, 0, 0, -2*d, 0, 0, 2*d);
-    } else if (tamano==3) {
-      forma = createShape(TRIANGLE, 0, 0, -d, -d, d, -d);
-      ;
+  @Override
+    void aspect() {
+      
+      triangle(0,0,coord1,coord2,coord3,coord4);
     }
-  }
 
 
-  void display() {
-    push();
-    translate(x, y);
-    rotate(ang);
-    shape(forma, 0, 0);
-    pop();
-  }
-  
-  
 }

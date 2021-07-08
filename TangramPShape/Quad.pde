@@ -1,35 +1,26 @@
 class Quad extends Pieza {
 
-  PShape forma;
+  float coord1, coord2, coord3, coord4, coord5, coord6;
 
-  Quad (int tipo, float xF, float yF, color rellenoF, boolean movF, float angF) {
+  Quad (float xF, float yF, color rellenoF, boolean movF, float angF, float coord1F, float coord2F, float coord3F, float coord4F, float coord5F, float coord6F) {
 
 
 
     super(xF, yF, rellenoF, movF, angF);
 
-
-    //Para dbujar la forma
-
-    if (tipo==1) {
-      forma = createShape(QUAD, 0, 0, d, d, 3*d, d, 2*d, 0);
-    } else if (tipo==2) {
-      forma = createShape(RECT, 0, 0, sqrt(2)*d, sqrt(2)*d);
-      forma.rotate(PI/4);
-    }
-  }
-
-  void display() {
-    push();
-    translate(x, y);
-    rotate(ang);
-    shape(forma, 0, 0);
-    pop();
+    coord1=coord1F;
+    coord2=coord2F;
+    coord3=coord3F;
+    coord4=coord4F;
+    coord5=coord5F;
+    coord6=coord6F;
   }
 
 
-  void reflect() {
 
-    forma.scale(-1, 1);
+  @Override
+    void aspect() {
+
+    quad(0, 0, coord1, coord2, coord3, coord4, coord5, coord6);
   }
 }

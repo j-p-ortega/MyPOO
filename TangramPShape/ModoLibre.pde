@@ -1,14 +1,11 @@
 void drawLibre() {
   
+for (int i=0; i<Tangram.length; i++) {
+       
 
-granTriang1.display();
-granTriang2.display();
-miniTriang1.display();  
-miniTriang2.display();  
-medioTriang.display();
-cuadrilat.display();
-cuadrado.display();  
-
+          Tangram[i].display();
+ 
+      }
 
 movement(mouseQ);
 

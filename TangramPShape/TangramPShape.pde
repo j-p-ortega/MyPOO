@@ -1,21 +1,14 @@
 //Los objetos que usaremos:
-Quad cuadrado;
-Triang granTriang1;
-Triang granTriang2;
-Triang medioTriang;
-Triang miniTriang1;
-Triang miniTriang2;
-Quad cuadrilat;
+
 Pieza ninguna; //Place holder vacio
 PShape home;
-PShape lv1;
-PImage lvi2;
-PImage lvi3;
-PImage lvi4;
-PImage lvi5;
 
+int ruido=0;
+int ruidoThreshold=15;
 
-
+Pieza[] Tangram;
+PImage[] Niveles = new PImage[5];
+PVector[] posSilueta = new PVector[5];
 
 
 //Definicion de parametros:
@@ -43,40 +36,48 @@ void setup() {
   size(600, 600);
   stroke(4);
 
+  Tangram = new Pieza[7];
+
   //Inicializadores de las piezas:
 
- cuadrilat   = new Quad(1, 0, 0, naranja, false,0);
-  cuadrado    = new Quad(2, 3*d, d, azul, false,0);
-  granTriang1 = new Triang(1, 2*d, 2*d, rojo, false,0);
-  granTriang1.rotar(-PI/2);
-  granTriang2 = new Triang(1, 2*d, 2*d, amarillo, false,0);
-  miniTriang1 = new Triang(3, 3*d, 3*d, verde, false,0);
-  miniTriang1.rotar(PI/2);
-  miniTriang2 = new Triang(3, 2*d, 2*d, morado, false,0);
-  medioTriang = new Triang(2, 4*d, 0, blanco, false,0);
-  ninguna     = new Triang(2, 0, 0, naranja, false,0);
+  Tangram[0] = new Quad(0, 0, naranja, false, 0, d, d, 3*d, d, 2*d, 0); //paralelogramo =0
+  Tangram[1] = new Quad(3*d, d, azul, false, PI/4,0,sqrt(2)*d,sqrt(2)*d,sqrt(2)*d,sqrt(2)*d,0); //cuadrado =1
+  Tangram[2] = new Triang(2*d, 2*d, rojo, false, 0,-2*d, -2*d, -2*d, 2*d); //granTriang1=2
+  Tangram[2].rotar(-PI/2);
+  Tangram[3] = new Triang(2*d, 2*d, amarillo, false, 0,-2*d, -2*d, -2*d, 2*d); //granTriang2=3
+  Tangram[4] = new Triang(3*d, 3*d, verde, false, 0,-d, -d, d, -d); //miniTriang1=4
+  Tangram[4].rotar(PI/2);
+  Tangram[5] = new Triang(2*d, 2*d, morado, false, 0,-d, -d, d, -d); //miniTriang2=5
+  Tangram[6] = new Triang(4*d, 0, blanco, false, 0,-2*d, 0, 0, 2*d); //medioTriang=6
+  ninguna    = new Triang(0, 0, naranja, false, 0,-2*d, 0, 0, 2*d);
 
 
 
 
   home = loadShape("Home.svg");
   home.disableStyle();
-
-  lv1 = loadShape("lv1.svg");
-  lv1.disableStyle();
-  lv1.scale(0.593);
-  lvi2 = loadImage("lvi2.png");
-  lvi2.resize(527, 0);
-  lvi2.filter(THRESHOLD, 2);
-  lvi3 = loadImage("lvi3.png");
-  lvi3.resize(750, 285);
-  lvi3.filter(THRESHOLD, 2);
-  lvi4 = loadImage("lvi4.png");
-  lvi4.resize(352, 0);
-  lvi4.filter(THRESHOLD, 2);
-  lvi5 = loadImage("lvi5.png");
-  lvi5.resize(374, 0);
-  lvi5.filter(THRESHOLD, 2);
+  
+  Niveles[0] = loadImage("lv1.png");
+  Niveles[0].filter(THRESHOLD, 2);
+  Niveles[0].resize(1090,0);
+  Niveles[1] = loadImage("lvi2.png");
+  Niveles[1].resize(527, 0);
+  Niveles[1].filter(THRESHOLD, 2);
+  Niveles[2] = loadImage("lvi3.png");
+  Niveles[2].resize(750, 285);
+  Niveles[2].filter(THRESHOLD, 2);
+  Niveles[3] = loadImage("lvi4.png");
+  Niveles[3].resize(352, 0);
+  Niveles[3].filter(THRESHOLD, 2);
+  Niveles[4] = loadImage("lvi5.png");
+  Niveles[4].resize(374, 0);
+  Niveles[4].filter(THRESHOLD, 2);
+  
+  posSilueta[0]= new PVector(-250,50);
+  posSilueta[1]= new PVector(40,20);
+  posSilueta[2]= new PVector(-80,140);
+  posSilueta[3]= new PVector(120,120);
+  posSilueta[4]= new PVector(120,90);
 }
 
 void draw() {
@@ -103,26 +104,11 @@ void draw() {
     break;
 
   case 1:
-    drawNivel1();
-    break;
-
   case 2:
-    drawNivel2();
-    break;
-
-
   case 3:
-    drawNivel3();
-    break;
-
-
   case 4:
-    drawNivel4();
-    break;
-
-
   case 5:
-    drawNivel5();
+    drawNivel();
     break;
   }
 }
