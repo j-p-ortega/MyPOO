@@ -66,6 +66,7 @@ abstract class Pieza {
 
   void display() {
     push();
+    stroke(6,3,2);
     fill(relleno);
     translate(x, y);
     rotate(ang);

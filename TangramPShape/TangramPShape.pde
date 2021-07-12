@@ -13,7 +13,7 @@ PVector[] posSilueta = new PVector[5];
 
 //Definicion de parametros:
 float d = 60; //dimension de las piezas. El codigo mantiene la proporcionalidad.
-color azul = color(100, 100, 255);
+color azul = color(100,100,255);
 color rojo = color(255, 100, 100);
 color amarillo = color(255, 255, 100);
 color verde = color(100, 255, 100);
