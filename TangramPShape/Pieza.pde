@@ -25,8 +25,7 @@ abstract class Pieza {
     mov = movF;
     ang = angF;
 
-    stroke(4);
-    fill(relleno);
+
   }
 
 
@@ -66,7 +65,8 @@ abstract class Pieza {
 
   void display() {
     push();
-    stroke(6,3,2);
+    //stroke(6,3,2);
+    noStroke();
     fill(relleno);
     translate(x, y);
     rotate(ang);

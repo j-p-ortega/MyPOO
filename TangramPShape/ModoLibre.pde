@@ -1,5 +1,7 @@
 void drawLibre() {
   
+noStroke();
+  
 for (int i=0; i<Tangram.length; i++) {
        
 

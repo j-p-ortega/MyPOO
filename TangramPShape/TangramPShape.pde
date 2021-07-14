@@ -8,7 +8,6 @@ int ruidoThreshold=15;
 
 Pieza[] Tangram;
 PImage[] Niveles = new PImage[5];
-PVector[] posSilueta = new PVector[5];
 
 
 //Definicion de parametros:
@@ -17,7 +16,7 @@ color azul = color(100,100,255);
 color rojo = color(255, 100, 100);
 color amarillo = color(255, 255, 100);
 color verde = color(100, 255, 100);
-color blanco = color(255);
+color blanco = color(255,192,203);
 color morado = color(200, 50, 255);
 color naranja = color(255, 180, 100);
 int screenState = 0; //Para saber qué pantalla deberíamos estar viendo
@@ -57,27 +56,18 @@ void setup() {
   home = loadShape("Home.svg");
   home.disableStyle();
   
-  Niveles[0] = loadImage("lv1.png");
+  Niveles[0] = loadImage("nivel8336.png");
   Niveles[0].filter(THRESHOLD, 2);
-  Niveles[0].resize(1090,0);
-  Niveles[1] = loadImage("lvi2.png");
-  Niveles[1].resize(527, 0);
+  Niveles[1] = loadImage("nivel8937.png");
   Niveles[1].filter(THRESHOLD, 2);
-  Niveles[2] = loadImage("lvi3.png");
-  Niveles[2].resize(750, 285);
+  Niveles[2] = loadImage("nivel6162.png");
   Niveles[2].filter(THRESHOLD, 2);
-  Niveles[3] = loadImage("lvi4.png");
-  Niveles[3].resize(352, 0);
+  Niveles[3] = loadImage("nivel12207.png");
   Niveles[3].filter(THRESHOLD, 2);
-  Niveles[4] = loadImage("lvi5.png");
-  Niveles[4].resize(374, 0);
+  Niveles[4] = loadImage("nivel10610.png");
   Niveles[4].filter(THRESHOLD, 2);
   
-  posSilueta[0]= new PVector(-250,50);
-  posSilueta[1]= new PVector(40,20);
-  posSilueta[2]= new PVector(-80,140);
-  posSilueta[3]= new PVector(120,120);
-  posSilueta[4]= new PVector(120,90);
+
 }
 
 void draw() {

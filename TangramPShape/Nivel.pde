@@ -2,10 +2,10 @@ void drawNivel() {
   
 stroke(10);
   
-float pos[] = posSilueta[screenState-1].array(); 
+
  
 fill(0);
-image(Niveles[screenState-1],pos[0],pos[1]);
+image(Niveles[screenState-1],0,0);
   
 for (int i=0; i<Tangram.length; i++) {
        

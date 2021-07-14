@@ -320,7 +320,7 @@ void saveTransparentCanvas(final color bg, final String name) { //idea original 
   canvas.format = ARGB;
  
   final color p[] = canvas.pixels, bgt = bg & ~#000000;
-  for (int i = 0; i != p.length; ++i)  if (p[i] == bg)  p[i] = bgt;
+  for (int i = 0; i != p.length; ++i)  if (p[i] == bg ||p[i]==color(170)||p[i]==color(1,0,1))  p[i] = bgt;
  
   canvas.updatePixels();
   canvas.save(name + nf(frameCount, 4) + ".png");
