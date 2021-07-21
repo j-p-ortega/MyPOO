@@ -1,17 +1,20 @@
+//Esta parte del codigo esta dedicada a las funciones necesarias para la funcionalidad del programa
+
 void keyPressed() {
   loadPixels();
 
   //Para rotar una pieza a la izquiera:
+  
   if (mouseQ==true) {
-    for (int i=0; i<Tangram.length; i++) {
+    for (int i=0; i<Tangram.length-1; i++) {
       if ((get(mouseX, mouseY)==Tangram[i].relleno)&&(key=='r' || key == 'R')) {
 
         Tangram[i].rotar(-PI/4);
       }
     }
   } else {
-    for (int i=0; i<Tangram.length; i++) {
-      if ((PiezaSelect==Tangram[i])&&(key=='r' || key == 'R')) {
+    for (int i=0; i<Tangram.length-1; i++) {
+      if ((Tangram[7]==Tangram[i])&&(key=='r' || key == 'R')) {
 
         Tangram[i].rotar(-PI/4);
       }
@@ -21,15 +24,15 @@ void keyPressed() {
   //Para rotar cualquier pieza a la derecha:
 
   if (mouseQ==true) {
-    for (int i=0; i<Tangram.length; i++) {
-      if ((get(mouseX, mouseY)==Tangram[i].relleno)&&(key=='e' || key == 'E')) {
+    for (int i=0; i<Tangram.length-1; i++) {
+      if ((get(mouseX, mouseY)==Tangram[i].relleno())&&(key=='e' || key == 'E')) {
 
         Tangram[i].rotar(PI/4);
       }
     }
   } else {
-    for (int i=0; i<Tangram.length; i++) {
-      if ((PiezaSelect==Tangram[i])&&(key=='e' || key == 'E')) {
+    for (int i=0; i<Tangram.length-1; i++) {
+      if ((Tangram[7]==Tangram[i])&&(key=='e' || key == 'E')) {
 
         Tangram[i].rotar(PI/4);
       }
@@ -39,49 +42,51 @@ void keyPressed() {
 
 
   //Para girar el paralelogramo:
-  if ((key=='t' || key == 'T')) {
+  
+  if ((key=='t' || key == 'T')&&(get(mouseX,mouseY)==Tangram[0].relleno()||Tangram[7]==Tangram[0])) {
 
     Tangram[0].reflect();
   }
 
 
 
-  //Para escoger la pieza seleccionada
+  //Para escoger la pieza seleccionada si jugamos solo teclado:
 
 
   if (mouseQ==false) {
     if (key=='z'||key=='Z') {
-      PiezaSelect=Tangram[0];
+      Tangram[7]=Tangram[0];
       ;
     }
 
     if (key=='x'||key=='X') {
-      PiezaSelect=Tangram[1];
+      Tangram[7]=Tangram[1];
     }
 
     if (key=='c'||key=='C') {
-      PiezaSelect=Tangram[2];
+      Tangram[7]=Tangram[2];
       ;
     }
 
     if (key=='v'||key=='V') {
-      PiezaSelect=Tangram[3];
+      Tangram[7]=Tangram[3];
     }
 
     if (key=='b'||key=='B') {
-      PiezaSelect=Tangram[4];
+      Tangram[7]=Tangram[4];
     }
 
     if (key=='n'||key=='N') {
-      PiezaSelect=Tangram[5];
+      Tangram[7]=Tangram[5];
     }
 
     if (key=='m'||key=='M') {
-      PiezaSelect=Tangram[6];
+      Tangram[7]=Tangram[6];
     }
   }
 
-  //Para cambiar de modo de juego
+  //Para cambiar de modo de juego:
+  
   if (key==TAB) {
     if (mouseQ==true) {
       print("Modo de juego cambiado a 'Solo teclado'. Comandos para seleccionar pieza: \nz = paralelogramo, x = cuadrado, c = Trian rojo, v = Triang amarillo, \nb = Triangulo verde, n = Triang morado, m = Triang blanco\n");
@@ -89,8 +94,10 @@ void keyPressed() {
       print("Modo de juego cambiado a 'Mouse y Teclado'");
     }
     mouseQ=!mouseQ;
-    PiezaSelect=ninguna;
+    Tangram[7]=null;
   }
+  
+//Cambiar la velocidad:
 
   if (key=='+'&&vel<61) {
     vel=vel+1;
@@ -100,12 +107,14 @@ void keyPressed() {
     vel=vel-1;
   }
 
+//Para mover si estamos jugando solo teclado:
+
   if (key=='d'||key=='D') {
     horMove=horMove+vel;
 
-    for (int i=0; i<Tangram.length; i++) {
+    for (int i=0; i<Tangram.length-1; i++) {
 
-      if (PiezaSelect==Tangram[i]) {
+      if (Tangram[7]==Tangram[i]) {
         Tangram[i].setMovimiento(true);
       }
     }
@@ -115,27 +124,27 @@ void keyPressed() {
   if (key=='a'||key=='A') {
     horMove=horMove-vel;
 
-    for (int i=0; i<Tangram.length; i++) {
+    for (int i=0; i<Tangram.length-1; i++) {
 
-      if (PiezaSelect==Tangram[i]) {
+      if (Tangram[7]==Tangram[i]) {
         Tangram[i].setMovimiento(true);
       }
     }
   }
   if (key=='w'||key=='W') {
     verMove=verMove-vel;
-    for (int i=0; i<Tangram.length; i++) {
+    for (int i=0; i<Tangram.length-1; i++) {
 
-      if (PiezaSelect==Tangram[i]) {
+      if (Tangram[7]==Tangram[i]) {
         Tangram[i].setMovimiento(true);
       }
     }
   }
   if (key=='s'||key=='S') {
     verMove=verMove+vel;
-    for (int i=0; i<Tangram.length; i++) {
+    for (int i=0; i<Tangram.length-1; i++) {
 
-      if (PiezaSelect==Tangram[i]) {
+      if (Tangram[7]==Tangram[i]) {
         Tangram[i].setMovimiento(true);
       }
     }
@@ -148,9 +157,9 @@ void keyReleased() {
 
   if (key=='d'||key=='D'||key=='a'||key=='A'||key=='w'||key=='W'||key=='s'||key=='S') {
 
-    for (int i=0; i<Tangram.length; i++) {
+    for (int i=0; i<Tangram.length-1; i++) {
 
-      if (PiezaSelect==Tangram[i]) {
+      if (Tangram[7]==Tangram[i]) {
         Tangram[i].setMovimiento(false);
       }
     }
@@ -208,12 +217,14 @@ void keyReleased() {
 
 
 void mousePressed() {
+  
+  //Para mover usando el mouse:
 
   if (mouseQ==true) {
 
 
-    for (int i=0; i<Tangram.length; i++) {
-      if ((get(mouseX, mouseY)==Tangram[i].relleno)&&(Tangram[i].mov==false)) {
+    for (int i=0; i<Tangram.length-1; i++) {
+      if ((get(mouseX, mouseY)==Tangram[i].relleno())&&(Tangram[i].mov==false)) {
 
         Tangram[i].setMovimiento(true);
       }
@@ -225,7 +236,7 @@ void mouseReleased() {
 
   if (mouseQ==true) {
 
-    for (int i=0; i<Tangram.length; i++) {
+    for (int i=0; i<Tangram.length-1; i++) {
 
 
       Tangram[i].setMovimiento(false);
@@ -291,23 +302,23 @@ void mouseClicked() {
     Tangram[4].rotar(PI/2);
     Tangram[5] = new Triang(2*d, 2*d, morado, false, 0, -d, -d, d, -d); //miniTriang2=5
     Tangram[6] = new Triang(4*d, 0, blanco, false, 0, -2*d, 0, 0, 2*d); //medioTriang=6
-    ninguna    = new Triang(0, 0, naranja, false, 0, -2*d, 0, 0, 2*d);
+    Tangram[7] = null;
   }
 }
 
 
-void movement(boolean gamemodeF) {
+void MovGlobal(boolean modoJuegoF) {
 
-  if (gamemodeF==true) {
-    for (int i=0; i<Tangram.length; i++) {
+  if (modoJuegoF==true) {
+    for (int i=0; i<Tangram.length-1; i++) {
 
 
       Tangram[i].mover(mouseX, mouseY);
     }
   }
 
-  if (gamemodeF==false) {
-    for (int i=0; i<Tangram.length; i++) {
+  if (modoJuegoF==false) {
+    for (int i=0; i<Tangram.length-1; i++) {
 
 
       Tangram[i].mover(horMove, verMove);

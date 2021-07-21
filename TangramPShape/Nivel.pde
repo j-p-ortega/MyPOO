@@ -7,7 +7,7 @@ stroke(10);
 fill(0);
 image(Niveles[screenState-1],0,0);
   
-for (int i=0; i<Tangram.length; i++) {
+for (int i=0; i<Tangram.length-1; i++) {
        
 
           Tangram[i].display();
@@ -16,7 +16,7 @@ for (int i=0; i<Tangram.length; i++) {
 
 
 
-movement(mouseQ);
+MovGlobal(mouseQ);
   
 String N1 = "Nivel ";
 
@@ -32,7 +32,7 @@ fill(170);
 rect(520,520,50,50,7);
 
 fill(1,0,1);
-shape(home, 525, 525, 40,40);
+shape(menu, 525, 525, 40,40);
 
 for(int k=0;k<600;k++){
   for(int j=0;j<600;j++){

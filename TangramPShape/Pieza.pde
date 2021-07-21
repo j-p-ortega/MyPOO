@@ -1,15 +1,18 @@
 
 abstract class Pieza {
   //Los atributos de un objeto de la clase Pieza son los siguientes:
-  //un valor entero que me indica el tipo de pieza que es
-  //(cuadrado, triagulo grande, triangulo pequeño, etc), un par de coordenadas (x,y),
-  // un color y un valor booleano que me indica si se esta moviendo o no, y un angulo
-  //que indica su rotacion.
+  //un par de coordenadas (x,y),un color y un valor booleano que me indica 
+  //si se esta moviendo o no, y un angulo que indica su rotacion.
+  //Adicionalmente tiene otros atributos internos que se usan para el correcto
+  //funcionamiento pero no estan pensados para ser accedidos ni manipulados 
+  //por el usuario.
 
   float x, y; //las coordenadas
   color relleno; //el color
   boolean mov; //Moviendose o no
   float ang; //angulo
+
+//Atributos internos:
 
   float x0=0;
   float y0=0;
@@ -24,8 +27,6 @@ abstract class Pieza {
     relleno = rellenoF;
     mov = movF;
     ang = angF;
-
-
   }
 
 
@@ -65,7 +66,6 @@ abstract class Pieza {
 
   void display() {
     push();
-    //stroke(6,3,2);
     noStroke();
     fill(relleno);
     translate(x, y);
@@ -78,5 +78,10 @@ abstract class Pieza {
   void setMovimiento(boolean bol) {
 
     mov=bol;
+  }
+
+  color relleno() {
+
+    return relleno;
   }
 }

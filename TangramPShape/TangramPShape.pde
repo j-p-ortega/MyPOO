@@ -1,18 +1,16 @@
 //Los objetos que usaremos:
 
-Pieza ninguna; //Place holder vacio
-PShape home;
-
-int ruido=0;
-int ruidoThreshold=15;
+PShape menu;   //Imagen para el boton muenu
+int ruido=0;   //Variable para contar los pixeles negros en los niveles
+int ruidoThreshold=15; //Threshold para la variable ruido
 
 Pieza[] Tangram;
 PImage[] Niveles = new PImage[5];
 
 
-//Definicion de parametros:
-float d = 60; //dimension de las piezas. El codigo mantiene la proporcionalidad.
-color azul = color(100,100,255);
+//Definicion de parametros alterables a gusto:
+float d = 60; //dimension de las piezas. El tangram mantiene la proporcionalidad pero no los niveles. Pueden crearse niveles con nueva proporcion
+color azul = color(100,100,255);    //colores de las piezas del Tangram
 color rojo = color(255, 100, 100);
 color amarillo = color(255, 255, 100);
 color verde = color(100, 255, 100);
@@ -23,11 +21,10 @@ int screenState = 0; //Para saber qué pantalla deberíamos estar viendo
 boolean mouseQ = true; //Para escoger si estamos jugando solo con el teclado
 // o con teclado + raton
 
-float horMove; //Para guardar el movimiento horizontal y vertical
-float verMove; //cuando juguemos sin raton
-int vel=1;   //Para ajustar la velocidad cuando juguemos sin raton
+float horMove; //Para guardar el movimiento horizontal y vertical para
+float verMove; //cuando juguemos sin raton.
+int vel=1;   //Para ajustar la velocidad cuando juguemos sin raton.
 
-Pieza PiezaSelect=ninguna; //para guardar la pieza seleccionada cuando jugamos sin raton
 
 void setup() {
 
@@ -35,26 +32,26 @@ void setup() {
   size(600, 600);
   stroke(4);
 
-  Tangram = new Pieza[7];
+  Tangram = new Pieza[8];
 
   //Inicializadores de las piezas:
 
-  Tangram[0] = new Quad(0, 0, naranja, false, 0, d, d, 3*d, d, 2*d, 0); //paralelogramo =0
+  Tangram[0] = new Quad(0, 0, naranja, false, 0, d, d, 3*d, d, 2*d, 0);                         //paralelogramo =0
   Tangram[1] = new Quad(3*d, d, azul, false, PI/4,0,sqrt(2)*d,sqrt(2)*d,sqrt(2)*d,sqrt(2)*d,0); //cuadrado =1
-  Tangram[2] = new Triang(2*d, 2*d, rojo, false, 0,-2*d, -2*d, -2*d, 2*d); //granTriang1=2
+  Tangram[2] = new Triang(2*d, 2*d, rojo, false, 0,-2*d, -2*d, -2*d, 2*d);                      //granTriang1=2
   Tangram[2].rotar(-PI/2);
-  Tangram[3] = new Triang(2*d, 2*d, amarillo, false, 0,-2*d, -2*d, -2*d, 2*d); //granTriang2=3
-  Tangram[4] = new Triang(3*d, 3*d, verde, false, 0,-d, -d, d, -d); //miniTriang1=4
+  Tangram[3] = new Triang(2*d, 2*d, amarillo, false, 0,-2*d, -2*d, -2*d, 2*d);                  //granTriang2=3
+  Tangram[4] = new Triang(3*d, 3*d, verde, false, 0,-d, -d, d, -d);                             //miniTriang1=4
   Tangram[4].rotar(PI/2);
-  Tangram[5] = new Triang(2*d, 2*d, morado, false, 0,-d, -d, d, -d); //miniTriang2=5
-  Tangram[6] = new Triang(4*d, 0, blanco, false, 0,-2*d, 0, 0, 2*d); //medioTriang=6
-  ninguna    = new Triang(0, 0, naranja, false, 0,-2*d, 0, 0, 2*d);
+  Tangram[5] = new Triang(2*d, 2*d, morado, false, 0,-d, -d, d, -d);                            //miniTriang2=5
+  Tangram[6] = new Triang(4*d, 0, blanco, false, 0,-2*d, 0, 0, 2*d);                            //medioTriang=6
+  Tangram[7] = null;                                                                            //pieza select=ninguna por el momento
 
 
 
 
-  home = loadShape("Home.svg");
-  home.disableStyle();
+  menu = loadShape("Home.svg");
+  menu.disableStyle();
   
   Niveles[0] = loadImage("nivel8336.png");
   Niveles[0].filter(THRESHOLD, 2);
