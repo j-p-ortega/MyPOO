@@ -4,7 +4,7 @@ void keyPressed() {
   loadPixels();
 
   //Para rotar una pieza a la izquiera:
-  
+
   if (mouseQ==true) {
     for (int i=0; i<Tangram.length-1; i++) {
       if ((get(mouseX, mouseY)==Tangram[i].relleno)&&(key=='r' || key == 'R')) {
@@ -42,8 +42,8 @@ void keyPressed() {
 
 
   //Para girar el paralelogramo:
-  
-  if ((key=='t' || key == 'T')&&(get(mouseX,mouseY)==Tangram[0].relleno()||Tangram[7]==Tangram[0])) {
+
+  if ((key=='t' || key == 'T')&&(get(mouseX, mouseY)==Tangram[0].relleno()||Tangram[7]==Tangram[0])) {
 
     Tangram[0].reflect();
   }
@@ -86,7 +86,7 @@ void keyPressed() {
   }
 
   //Para cambiar de modo de juego:
-  
+
   if (key==TAB) {
     if (mouseQ==true) {
       print("Modo de juego cambiado a 'Solo teclado'. Comandos para seleccionar pieza: \nz = paralelogramo, x = cuadrado, c = Trian rojo, v = Triang amarillo, \nb = Triangulo verde, n = Triang morado, m = Triang blanco\n");
@@ -96,8 +96,8 @@ void keyPressed() {
     mouseQ=!mouseQ;
     Tangram[7]=null;
   }
-  
-//Cambiar la velocidad:
+
+  //Cambiar la velocidad:
 
   if (key=='+'&&vel<61) {
     vel=vel+1;
@@ -107,7 +107,7 @@ void keyPressed() {
     vel=vel-1;
   }
 
-//Para mover si estamos jugando solo teclado:
+  //Para mover si estamos jugando solo teclado:
 
   if (key=='d'||key=='D') {
     horMove=horMove+vel;
@@ -209,22 +209,22 @@ void keyReleased() {
 
   //Para guardar los niveles creados
   if (key=='g'&&(screenState==-1)) {
-   saveTransparentCanvas(color(140), "nivel"); 
-   print("Guardado de png completado");
+    saveTransparentCanvas(color(140), "nivel");
+    print("Guardado de png completado");
   }
 }
 
 
 
 void mousePressed() {
-  
+
   //Para mover usando el mouse:
 
   if (mouseQ==true) {
 
 
     for (int i=0; i<Tangram.length-1; i++) {
-      if ((get(mouseX, mouseY)==Tangram[i].relleno())&&(Tangram[i].mov==false)) {
+      if ((get(mouseX, mouseY)==Tangram[i].relleno())&&(Tangram[i]!=Tangram[7])) {
 
         Tangram[i].setMovimiento(true);
       }
@@ -238,8 +238,8 @@ void mouseReleased() {
 
     for (int i=0; i<Tangram.length-1; i++) {
 
+        Tangram[i].setMovimiento(false);
 
-      Tangram[i].setMovimiento(false);
     }
   }
 }
@@ -293,15 +293,15 @@ void mouseClicked() {
   if (screenState!=screenStateF) {
 
 
-    Tangram[0] = new Quad(0, 0, naranja, false, 0, d, d, 3*d, d, 2*d, 0); //paralelogramo =0
-    Tangram[1] = new Quad(3*d, d, azul, false, PI/4, 0, sqrt(2)*d, sqrt(2)*d, sqrt(2)*d, sqrt(2)*d, 0); //cuadrado =1
-    Tangram[2] = new Triang(2*d, 2*d, rojo, false, 0, -2*d, -2*d, -2*d, 2*d); //granTriang1=2
+    Tangram[0] = new Quad(0, 0, naranja, 0, d, d, 3*d, d, 2*d, 0); //paralelogramo =0
+    Tangram[1] = new Quad(3*d, d, azul, PI/4, 0, sqrt(2)*d, sqrt(2)*d, sqrt(2)*d, sqrt(2)*d, 0); //cuadrado =1
+    Tangram[2] = new Triang(2*d, 2*d, rojo, 0, -2*d, -2*d, -2*d, 2*d); //granTriang1=2
     Tangram[2].rotar(-PI/2);
-    Tangram[3] = new Triang(2*d, 2*d, amarillo, false, 0, -2*d, -2*d, -2*d, 2*d); //granTriang2=3
-    Tangram[4] = new Triang(3*d, 3*d, verde, false, 0, -d, -d, d, -d); //miniTriang1=4
+    Tangram[3] = new Triang(2*d, 2*d, amarillo, 0, -2*d, -2*d, -2*d, 2*d); //granTriang2=3
+    Tangram[4] = new Triang(3*d, 3*d, verde, 0, -d, -d, d, -d); //miniTriang1=4
     Tangram[4].rotar(PI/2);
-    Tangram[5] = new Triang(2*d, 2*d, morado, false, 0, -d, -d, d, -d); //miniTriang2=5
-    Tangram[6] = new Triang(4*d, 0, blanco, false, 0, -2*d, 0, 0, 2*d); //medioTriang=6
+    Tangram[5] = new Triang(2*d, 2*d, morado, 0, -d, -d, d, -d); //miniTriang2=5
+    Tangram[6] = new Triang(4*d, 0, blanco, 0, -2*d, 0, 0, 2*d); //medioTriang=6
     Tangram[7] = null;
   }
 }
@@ -329,10 +329,10 @@ void MovGlobal(boolean modoJuegoF) {
 void saveTransparentCanvas(final color bg, final String name) { //idea original de https://forum.processing.org/two/discussion/12036/saving-sketch-with-a-transparent-background
   final PImage canvas = get();
   canvas.format = ARGB;
- 
+
   final color p[] = canvas.pixels, bgt = bg & ~#000000;
-  for (int i = 0; i != p.length; ++i)  if (p[i] == bg ||p[i]==color(170)||p[i]==color(1,0,1))  p[i] = bgt;
- 
+  for (int i = 0; i != p.length; ++i)  if (p[i] == bg ||p[i]==color(170)||p[i]==color(1, 0, 1))  p[i] = bgt;
+
   canvas.updatePixels();
   canvas.save(name + nf(frameCount, 4) + ".png");
 }

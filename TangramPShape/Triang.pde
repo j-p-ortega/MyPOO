@@ -3,9 +3,9 @@ class Triang extends Pieza {
 
   float coord1, coord2, coord3, coord4;
 
-  Triang (float xF, float yF, color rellenoF, boolean movF, float angF, float coord1F, float coord2F, float coord3F, float coord4F) {
+  Triang (float xF, float yF, color rellenoF, float angF, float coord1F, float coord2F, float coord3F, float coord4F) {
 
-    super(xF, yF, rellenoF, movF, angF);
+    super(xF, yF, rellenoF, angF);
     
     coord1=coord1F;
     coord2=coord2F;

@@ -9,23 +9,23 @@ abstract class Pieza {
 
   float x, y; //las coordenadas
   color relleno; //el color
-  boolean mov; //Moviendose o no
   float ang; //angulo
 
 //Atributos internos:
 
-  float x0=0;
-  float y0=0;
-  float xM=0;
-  float yM=0;
-  int mirror=1;
+  float x0=0; //Estos cinco atributos tienen como objetivo
+  float y0=0; //hacer que al seleccionar una pieza con el mouse,
+  float xM=0; //y arrastrarla, sea seleccionada desde el punto
+  float yM=0; //en que fue clickada y no desde la esquina superior
+  boolean mov; //estética.
+  int escala=1; //Solo la uso para reflejar la figura, entonces
+                //puedo dejarla como atributo interno.
 
 
-  Pieza( float xF, float yF, color rellenoF, boolean movF, float angF) {
+  Pieza( float xF, float yF, color rellenoF, float angF) {
     x = xF;
     y = yF;
     relleno = rellenoF;
-    mov = movF;
     ang = angF;
   }
 
@@ -61,7 +61,7 @@ abstract class Pieza {
 
   void reflect() {
 
-    mirror=-mirror;
+    escala=-escala;
   }
 
   void display() {
@@ -70,7 +70,7 @@ abstract class Pieza {
     fill(relleno);
     translate(x, y);
     rotate(ang);
-    scale(mirror, 1);
+    scale(escala, 1);
     aspect();
     pop();
   }
