@@ -29,13 +29,13 @@ Condiciones:
 1. _Plazo máximo del último `commit`:_ 24h del Domingo 11/4/21.
 2. _Presentaciones (demo + código):_ Lunes 12/4/21. Tiempo: 3m presentación +  2m preguntas de los asistentes.
 
-# Taller Tangram POO
+## Taller Tangram POO
 
-## Propósito
+### Propósito
 
 Evidenciar los conceptos fundamentales de la programación orientada a objetos (POO) (estudiados [acá](http://objetos.github.io/objects) y [acá](http://objetos.github.io/polymorphism)), empleando varios lenguajes, para la implementación del juego del [tangram](https://en.wikipedia.org/wiki/Tangram).
 
-## Tareas
+### Tareas
 
 En los directorios de este repositorio se encuentra la plantilla del Juego del *tangram* en varios lenguajes:
 
@@ -51,7 +51,7 @@ empléelas de acuerdo al (o a los) lenguaje(s) con los que desee experimentar, p
 3. Verificación de resultados.
 4. Creación de niveles.
 
-## Condiciones de la entrega
+### Condiciones de la entrega
 
 * Plazo del último commit: Antes de la exposición del 26/7/21 en el horario de clase.
 * Tiempo exposición: 5m (3m presentación: demo, código y conclusiones + 2m preguntas).
