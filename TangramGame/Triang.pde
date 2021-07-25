@@ -15,7 +15,7 @@ class Triang extends Pieza {
   }
 
   @Override
-    void aspect() {
+    void aspecto() {
       
       triangle(0,0,coord1,coord2,coord3,coord4);
     }

@@ -19,7 +19,7 @@ class Quad extends Pieza {
 
 
   @Override
-    void aspect() {
+    void aspecto() {
 
     quad(0, 0, coord1, coord2, coord3, coord4, coord5, coord6);
   }

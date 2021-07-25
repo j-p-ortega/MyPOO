@@ -48,7 +48,7 @@ for(int k=0;k<600;k++){
 }
 
     if (ruido<ruidoThreshold) {
-      println("¡Nivel ", screenState, " superado!");
+      println("¡Nivel ", screenState, " superado!\n");
       screenState=(screenState+1)%6;
     }
       ruido=0;

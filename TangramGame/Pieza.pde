@@ -14,10 +14,10 @@ abstract class Pieza {
 //Atributos internos:
 
   float x0=0; //Estos cinco atributos tienen como objetivo
-  float y0=0; //hacer que al seleccionar una pieza con el mouse,
+  float y0=0; //hacer que, al seleccionar una pieza con el mouse
   float xM=0; //y arrastrarla, sea seleccionada desde el punto
   float yM=0; //en que fue clickada y no desde la esquina superior
-  boolean mov; //estética.
+  boolean mov; //para mayor estetica.
   int escala=1; //Solo la uso para reflejar la figura, entonces
                 //puedo dejarla como atributo interno.
 
@@ -40,13 +40,13 @@ abstract class Pieza {
     ang=ang+angFal;
   }
 
-  void mover(float xmov, float ymov) {
-
-    if (mov==false) {
-
-      x0=x;
-      y0=y;
-      xM=xmov;
+  void mover(float xmov, float ymov) { //El metodo mover reasigna los valores de los atributos
+                                       //de posicion de la pieza de manera suave y natural basado
+    if (mov==false) {                  //en el atributo mov. La idea es que x0 y y0 guardan la
+                                       //posicion en el ultimo momento en que la pieza estuvo quieta,
+      x0=x;                            //y xM y yM guardan el valor de la poscion del mouse en ese mismo
+      y0=y;                            //momento, para poder hacer el movimiento relativo a la
+      xM=xmov;                         //distancia entre estos puntos.
       yM=ymov;
     }
 
@@ -57,11 +57,11 @@ abstract class Pieza {
     }
   }
 
-  abstract void aspect();
+  abstract void aspecto();
 
   void reflect() {
 
-    escala=-escala;
+    escala=-escala;  //Para reflejar el paralelogramo
   }
 
   void display() {
@@ -71,11 +71,11 @@ abstract class Pieza {
     translate(x, y);
     rotate(ang);
     scale(escala, 1);
-    aspect();
+    aspecto();
     pop();
   }
 
-  void setMovimiento(boolean bol) {
+  void setMov(boolean bol) {
 
     mov=bol;
   }
