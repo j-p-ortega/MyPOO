@@ -42,4 +42,11 @@ Una vez seleccionada una pieza, utilice los siguientes comandos para interactuar
 't' = reflejar el paralelogramo.
 '+' o '-' = cambiar la velocidad del movimiento.
 
+##Verificación y creación de niveles
 
+Para superar un nivel, arrastre las piezas hasta cubrir completamente la silueta negra. El juego
+verificará automáticamente cuando un nivel sea superado y lo enviará al siguiente. Para crear un
+nuevo nivel, entre al modo libre y acomode las piezas de acuerdo a como desee que sea la silueta 
+del nuevo nivel. Después, oprima la tecla 'g' para guardar un png con ese arreglo de las piezas. 
+El png puede convertirse en un nuevo nivel siguiendo la estructura con la cual se programaron 
+los niveles anteriores.
