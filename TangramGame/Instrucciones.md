@@ -1,12 +1,12 @@
 # Tangram Game
 
-##Descripción
+## Descripción
 
-Esta aplicación es una simulación virtual del juego [Tangram] (https://es.wikipedia.org/wiki/Tangram). El juego puede
+Esta aplicación es una simulación virtual del juego [Tangram](https://es.wikipedia.org/wiki/Tangram). El juego puede
 jugarse de dos maneras: con el mouse y el teclado, o solo con el teclado. Para cambiar el modo de control, basta con presionar
 la tecla TAB.
 
-##Controles en el modo mouse y teclado
+## Controles en el modo mouse y teclado
 
 En el menú principal, seleccione con el mouse el recuadro correspondiente al modo de juego que desee: modo libre, modo
 aventura (en el que debe pasar los niveles uno por uno), o modo miscelánea (en el que puede escoger el nivel que desee). En
@@ -16,7 +16,7 @@ casa para volver al mún principal en cualquier momento.
 Para mover una pieza, haga click sobre ella y arrástrela con el ratón oprimido. Si desea rotarla, oprima las teclas 'e' o 'r'
 mientras el cursor está sobre la pieza. Para reflejar el paralelogramo, oprima la tecla 't'.
 
-##Controles en el modo solo teclado.
+## Controles en el modo solo teclado.
  
 En el menú principal, oprima las teclas '1', '2' o '3' correspondiente al modo de juego que desee: modo libre (1), modo
 aventura (en el que debe pasar los niveles uno por uno)(2), o modo miscelánea (en el que puede escoger el nivel que 
@@ -42,7 +42,7 @@ Una vez seleccionada una pieza, utilice los siguientes comandos para interactuar
 't' = reflejar el paralelogramo.
 '+' o '-' = cambiar la velocidad del movimiento.
 
-##Verificación y creación de niveles
+## Verificación y creación de niveles
 
 Para superar un nivel, arrastre las piezas hasta cubrir completamente la silueta negra. El juego
 verificará automáticamente cuando un nivel sea superado y lo enviará al siguiente. Para crear un
